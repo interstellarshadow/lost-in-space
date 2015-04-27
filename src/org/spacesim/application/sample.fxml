@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0"
+           prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.spacesim.application.MainController">
+    <AnchorPane prefHeight="598.0" prefWidth="365.0">
+        <children>
+            <TabPane layoutY="91.0" prefHeight="507.0" prefWidth="351.0" tabClosingPolicy="UNAVAILABLE">
+                <tabs>
+                    <Tab text="Summary">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                        </content>
+                    </Tab>
+                    <Tab text="Freight">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <TableView fx:id="freightTable">
+                                        <columns>
+                                            <TableColumn text="Item"/>
+                                            <TableColumn text="Number"/>
+                                            <TableColumn text="Weight"/>
+                                            <TableColumn text="Volume"/>
+                                        </columns>
+                                    </TableView>
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </Tab>
+                    <Tab text="Weapons">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                        </content>
+                    </Tab>
+                </tabs>
+            </TabPane>
+            <Label fx:id="playerName" layoutX="14.0" layoutY="31.0" text="&lt;Player Name&gt;">
+                <contextMenu>
+                    <ContextMenu fx:id="playerNameMenu">
+                        <items>
+                            <MenuItem fx:id="playerNameChange" mnemonicParsing="false" text="Change Name"/>
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </Label>
+            <Label fx:id="shipName" layoutX="151.0" layoutY="31.0" text="&lt;Ship Name&gt;">
+                <contextMenu>
+                    <ContextMenu fx:id="shipNameMenu">
+                        <items>
+                            <MenuItem fx:id="shipNameChange" mnemonicParsing="false" text="Change Name"/>
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </Label>
+            <Label layoutX="14.0" layoutY="14.0" text="Player Name:">
+                <font>
+                    <Font name="System Bold" size="12.0"/>
+                </font>
+            </Label>
+            <Label layoutX="151.0" layoutY="14.0" text="Ship Name:">
+                <font>
+                    <Font name="System Bold" size="12.0"/>
+                </font>
+            </Label>
+        </children>
+    </AnchorPane>
+    <AnchorPane/>
+</SplitPane>
