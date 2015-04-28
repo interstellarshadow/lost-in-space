@@ -21,21 +21,6 @@ import java.util.HashMap;
 public class Ship implements Crewable, Flyable, Orbitable, Possesable, Damageable, Attackable, Autopilotable, Landable,
         Dockable {
     /**
-     * This enum includes all different types of ship roles. These will include
-     * everything from probes and drones to capital ships and stations. Of
-     * course a capital ship for a low-tech society won't be nearly as big as a
-     * capital ship for a high tech faction.
-     *
-     * @author Andrew
-     */
-    public enum ShipRole {
-        PROBE, DRONE, FIGHTER, EXPLORER, MINER, HAULER, FREIGHTER, STRIKESHIP, INTERCEPTOR, MISSILECRUISER
-
-        // TODO: More to come. Also TODO: Probably make this an abstract class,
-        // with ship classes and ship roles being child objects
-    }
-
-    /**
      * Constructor for the ship. This is for direct creation, either through a
      * design page, or by mod scripts, etc. It is, of course, called by the
      * generateShip method
@@ -58,6 +43,11 @@ public class Ship implements Crewable, Flyable, Orbitable, Possesable, Damageabl
      */
     public static Ship generateShip(Faction faction, ShipRole role) {
         return null;
+    }
+
+    @Override
+    public void applyDamage(DamageType type, float value) {
+
     }
 
     public void setCrew(HashMap<?, ?> crew) {
@@ -138,5 +128,20 @@ public class Ship implements Crewable, Flyable, Orbitable, Possesable, Damageabl
     public Landable getLandable() throws Exception {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    /**
+     * This enum includes all different types of ship roles. These will include
+     * everything from probes and drones to capital ships and stations. Of
+     * course a capital ship for a low-tech society won't be nearly as big as a
+     * capital ship for a high tech faction.
+     *
+     * @author Andrew
+     */
+    public enum ShipRole {
+        PROBE, DRONE, FIGHTER, EXPLORER, MINER, HAULER, FREIGHTER, STRIKESHIP, INTERCEPTOR, MISSILECRUISER
+
+        // TODO: More to come. Also TODO: Probably make this an abstract class,
+        // with ship classes and ship roles being child objects
     }
 }
